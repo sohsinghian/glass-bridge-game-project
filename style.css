@@ -1,0 +1,73 @@
+h1 {
+  text-align: center;
+}
+
+#left-btn {
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+#right-btn {
+  font-size: 20px;
+  background-color: green;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+#btns {
+  display: flex;
+}
+
+#container {
+  margin: 100px 20px 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.glass-container {
+  width: 1020px;
+  margin-left: 100px;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.glass {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  border: 1px solid gray;
+}
+
+#player {
+  width: 50px;
+  margin: auto;
+}
+
+html {
+  width: auto;
+  width: 100%;
+  display: flex;
+}
+
+#lives {
+  margin-left: 44%;
+  margin-right: 44%;
+  margin-bottom: 100px;
+  display: flex;
+}
+
+.life {
+  width: 50px;
+  margin: auto;
+}
