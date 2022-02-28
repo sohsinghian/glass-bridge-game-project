@@ -1,4 +1,10 @@
-h1 {
+html {
+  width: auto;
+  width: 100%;
+  display: flex;
+}
+
+body {
   text-align: center;
 }
 
@@ -27,7 +33,7 @@ h1 {
 }
 
 #container {
-  margin: 100px 20px 50px 20px;
+  margin: 20px 50px 0px 50px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -35,16 +41,17 @@ h1 {
 
 .glass-container {
   width: 1020px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-right: 200px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(13, 80px);
+  grid-template-rows: repeat(2, 80px);
 }
 
 .glass {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: flex;
   border: 1px solid gray;
 }
@@ -54,15 +61,9 @@ h1 {
   margin: auto;
 }
 
-html {
-  width: auto;
-  width: 100%;
-  display: flex;
-}
-
 #lives {
-  margin-left: 44%;
-  margin-right: 44%;
+  margin-left: 550px;
+  margin-right: 550px;
   margin-bottom: 100px;
   display: flex;
 }
@@ -70,4 +71,14 @@ html {
 .life {
   width: 50px;
   margin: auto;
+}
+
+.soldier {
+  width: 50px;
+  margin: auto;
+}
+
+#soldiers {
+  margin: 30px 620px 0px 620px;
+  display: flex;
 }

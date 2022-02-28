@@ -13,56 +13,13 @@ const buildGlassBridge = (numOfSquare) => {
   }
 };
 
-buildGlassBridge(20);
+buildGlassBridge(26);
 
-const left1 = document.querySelectorAll(".glass")[0];
-const left2 = document.querySelectorAll(".glass")[1];
-const left3 = document.querySelectorAll(".glass")[2];
-const left4 = document.querySelectorAll(".glass")[3];
-const left5 = document.querySelectorAll(".glass")[4];
-const left6 = document.querySelectorAll(".glass")[5];
-const left7 = document.querySelectorAll(".glass")[6];
-const left8 = document.querySelectorAll(".glass")[7];
-const left9 = document.querySelectorAll(".glass")[8];
-const left10 = document.querySelectorAll(".glass")[9];
-const right1 = document.querySelectorAll(".glass")[10];
-const right2 = document.querySelectorAll(".glass")[11];
-const right3 = document.querySelectorAll(".glass")[12];
-const right4 = document.querySelectorAll(".glass")[13];
-const right5 = document.querySelectorAll(".glass")[14];
-const right6 = document.querySelectorAll(".glass")[15];
-const right7 = document.querySelectorAll(".glass")[16];
-const right8 = document.querySelectorAll(".glass")[17];
-const right9 = document.querySelectorAll(".glass")[18];
-const right10 = document.querySelectorAll(".glass")[19];
+const glassBridgeArray = Array.from(document.querySelectorAll(".glass"));
+const leftArray = glassBridgeArray.slice(0, 13);
+const rightArray = glassBridgeArray.slice(13);
 
-const leftArray = [
-  left1,
-  left2,
-  left3,
-  left4,
-  left5,
-  left6,
-  left7,
-  left8,
-  left9,
-  left10,
-];
-
-const rightArray = [
-  right1,
-  right2,
-  right3,
-  right4,
-  right5,
-  right6,
-  right7,
-  right8,
-  right9,
-  right10,
-];
-
-const randomLeftOrRight = () => {
+const randomValueForGlassBridge = () => {
   const trueOrFalse = [true, false];
   for (let i = 0; i < leftArray.length; i++) {
     leftArray[i].value = trueOrFalse[Math.floor(Math.random() * 2)];
@@ -75,14 +32,70 @@ const randomLeftOrRight = () => {
     }
   }
 };
-randomLeftOrRight();
 
+randomValueForGlassBridge();
+
+const player = document.querySelector("#player");
+
+const moveLeft13 = () => {
+  if (leftArray[12].value === true) {
+    leftArray[12].appendChild(player);
+    const alertVictory = () => {
+      alert("Congrats! You win the game!");
+    };
+    setTimeout(alertVictory, 500);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
+const moveLeft12 = () => {
+  if (leftArray[11].value === true) {
+    leftArray[11].appendChild(player);
+    rightButton.removeEventListener("click", moveRight12);
+    leftButton.removeEventListener("click", moveLeft12);
+    rightButton.addEventListener("click", moveRight13);
+    leftButton.addEventListener("click", moveLeft13);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
+
+const moveLeft11 = () => {
+  if (leftArray[10].value === true) {
+    leftArray[10].appendChild(player);
+    rightButton.removeEventListener("click", moveRight11);
+    leftButton.removeEventListener("click", moveLeft11);
+    rightButton.addEventListener("click", moveRight12);
+    leftButton.addEventListener("click", moveLeft12);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
 const moveLeft10 = () => {
-  if (left10.value === true) {
-    document.querySelectorAll(".glass")[9].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft10);
+  if (leftArray[9].value === true) {
+    leftArray[9].appendChild(player);
     rightButton.removeEventListener("click", moveRight10);
-    return alert("Congrats! You win $456 billion!");
+    leftButton.removeEventListener("click", moveLeft10);
+    rightButton.addEventListener("click", moveRight11);
+    leftButton.addEventListener("click", moveLeft11);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -95,12 +108,12 @@ const moveLeft10 = () => {
 };
 
 const moveLeft9 = () => {
-  if (left9.value === true) {
-    document.querySelectorAll(".glass")[8].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft9);
+  if (leftArray[8].value === true) {
+    leftArray[8].appendChild(player);
     rightButton.removeEventListener("click", moveRight9);
-    leftButton.addEventListener("click", moveLeft10);
+    leftButton.removeEventListener("click", moveLeft9);
     rightButton.addEventListener("click", moveRight10);
+    leftButton.addEventListener("click", moveLeft10);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -113,12 +126,12 @@ const moveLeft9 = () => {
 };
 
 const moveLeft8 = () => {
-  if (left8.value === true) {
-    document.querySelectorAll(".glass")[7].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft8);
+  if (leftArray[7].value === true) {
+    leftArray[7].appendChild(player);
     rightButton.removeEventListener("click", moveRight8);
-    leftButton.addEventListener("click", moveLeft9);
+    leftButton.removeEventListener("click", moveLeft8);
     rightButton.addEventListener("click", moveRight9);
+    leftButton.addEventListener("click", moveLeft9);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -131,12 +144,12 @@ const moveLeft8 = () => {
 };
 
 const moveLeft7 = () => {
-  if (left7.value === true) {
-    document.querySelectorAll(".glass")[6].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft7);
+  if (leftArray[6].value === true) {
+    leftArray[6].appendChild(player);
     rightButton.removeEventListener("click", moveRight7);
-    leftButton.addEventListener("click", moveLeft8);
+    leftButton.removeEventListener("click", moveLeft7);
     rightButton.addEventListener("click", moveRight8);
+    leftButton.addEventListener("click", moveLeft8);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -149,12 +162,12 @@ const moveLeft7 = () => {
 };
 
 const moveLeft6 = () => {
-  if (left6.value === true) {
-    document.querySelectorAll(".glass")[5].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft6);
+  if (leftArray[5].value === true) {
+    leftArray[5].appendChild(player);
     rightButton.removeEventListener("click", moveRight6);
-    leftButton.addEventListener("click", moveLeft7);
+    leftButton.removeEventListener("click", moveLeft6);
     rightButton.addEventListener("click", moveRight7);
+    leftButton.addEventListener("click", moveLeft7);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -167,12 +180,12 @@ const moveLeft6 = () => {
 };
 
 const moveLeft5 = () => {
-  if (left5.value === true) {
-    document.querySelectorAll(".glass")[4].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft5);
+  if (leftArray[4].value === true) {
+    leftArray[4].appendChild(player);
     rightButton.removeEventListener("click", moveRight5);
-    leftButton.addEventListener("click", moveLeft6);
+    leftButton.removeEventListener("click", moveLeft5);
     rightButton.addEventListener("click", moveRight6);
+    leftButton.addEventListener("click", moveLeft6);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -185,12 +198,12 @@ const moveLeft5 = () => {
 };
 
 const moveLeft4 = () => {
-  if (left4.value === true) {
-    document.querySelectorAll(".glass")[3].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft4);
+  if (leftArray[3].value === true) {
+    leftArray[3].appendChild(player);
     rightButton.removeEventListener("click", moveRight4);
-    leftButton.addEventListener("click", moveLeft5);
+    leftButton.removeEventListener("click", moveLeft4);
     rightButton.addEventListener("click", moveRight5);
+    leftButton.addEventListener("click", moveLeft5);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -203,12 +216,12 @@ const moveLeft4 = () => {
 };
 
 const moveLeft3 = () => {
-  if (left3.value === true) {
-    document.querySelectorAll(".glass")[2].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft3);
+  if (leftArray[2].value === true) {
+    leftArray[2].appendChild(player);
     rightButton.removeEventListener("click", moveRight3);
-    leftButton.addEventListener("click", moveLeft4);
+    leftButton.removeEventListener("click", moveLeft3);
     rightButton.addEventListener("click", moveRight4);
+    leftButton.addEventListener("click", moveLeft4);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -221,12 +234,12 @@ const moveLeft3 = () => {
 };
 
 const moveLeft2 = () => {
-  if (left2.value === true) {
-    document.querySelectorAll(".glass")[1].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft2);
+  if (leftArray[1].value === true) {
+    leftArray[1].appendChild(player);
     rightButton.removeEventListener("click", moveRight2);
-    leftButton.addEventListener("click", moveLeft3);
+    leftButton.removeEventListener("click", moveLeft2);
     rightButton.addEventListener("click", moveRight3);
+    leftButton.addEventListener("click", moveLeft3);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -239,13 +252,12 @@ const moveLeft2 = () => {
 };
 
 const moveLeft = () => {
-  const player = document.querySelector("#player");
-  if (left1.value === true) {
-    document.querySelectorAll(".glass")[0].appendChild(player);
-    leftButton.removeEventListener("click", moveLeft);
+  if (leftArray[0].value === true) {
+    leftArray[0].appendChild(player);
     rightButton.removeEventListener("click", moveRight);
-    leftButton.addEventListener("click", moveLeft2);
+    leftButton.removeEventListener("click", moveLeft);
     rightButton.addEventListener("click", moveRight2);
+    leftButton.addEventListener("click", moveLeft2);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -260,12 +272,66 @@ const moveLeft = () => {
 const leftButton = document.querySelector("#left-btn");
 leftButton.addEventListener("click", moveLeft);
 
+const moveRight13 = () => {
+  if (rightArray[12].value === true) {
+    rightArray[12].appendChild(player);
+    const alertVictory = () => {
+      alert("Congrats! You win the game!");
+    };
+    setTimeout(alertVictory, 500);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
+const moveRight12 = () => {
+  if (rightArray[11].value === true) {
+    rightArray[11].appendChild(player);
+    rightButton.removeEventListener("click", moveRight12);
+    leftButton.removeEventListener("click", moveLeft12);
+    rightButton.addEventListener("click", moveRight13);
+    leftButton.addEventListener("click", moveLeft13);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
+
+const moveRight11 = () => {
+  if (rightArray[10].value === true) {
+    rightArray[10].appendChild(player);
+    rightButton.removeEventListener("click", moveRight11);
+    leftButton.removeEventListener("click", moveLeft11);
+    rightButton.addEventListener("click", moveRight12);
+    leftButton.addEventListener("click", moveLeft12);
+  } else {
+    document.querySelector(".life").remove();
+    if (document.querySelectorAll(".life").length > 0) {
+      alert("You lose a life!");
+    } else if (document.querySelectorAll(".life").length === 0) {
+      location.reload();
+      return alert("You lose!");
+    }
+  }
+};
+
 const moveRight10 = () => {
-  if (right10.value === true) {
-    document.querySelectorAll(".glass")[19].appendChild(player);
+  if (rightArray[9].value === true) {
+    rightArray[9].appendChild(player);
     rightButton.removeEventListener("click", moveRight10);
     leftButton.removeEventListener("click", moveLeft10);
-    return alert("Congrats! You win $456 billion");
+    rightButton.addEventListener("click", moveRight11);
+    leftButton.addEventListener("click", moveLeft11);
   } else {
     document.querySelector(".life").remove();
     if (document.querySelectorAll(".life").length > 0) {
@@ -278,8 +344,8 @@ const moveRight10 = () => {
 };
 
 const moveRight9 = () => {
-  if (right9.value === true) {
-    document.querySelectorAll(".glass")[18].appendChild(player);
+  if (rightArray[8].value === true) {
+    rightArray[8].appendChild(player);
     rightButton.removeEventListener("click", moveRight9);
     leftButton.removeEventListener("click", moveLeft9);
     rightButton.addEventListener("click", moveRight10);
@@ -296,8 +362,8 @@ const moveRight9 = () => {
 };
 
 const moveRight8 = () => {
-  if (right8.value === true) {
-    document.querySelectorAll(".glass")[17].appendChild(player);
+  if (rightArray[7].value === true) {
+    rightArray[7].appendChild(player);
     rightButton.removeEventListener("click", moveRight8);
     leftButton.removeEventListener("click", moveLeft8);
     rightButton.addEventListener("click", moveRight9);
@@ -314,8 +380,8 @@ const moveRight8 = () => {
 };
 
 const moveRight7 = () => {
-  if (right7.value === true) {
-    document.querySelectorAll(".glass")[16].appendChild(player);
+  if (rightArray[6].value === true) {
+    rightArray[6].appendChild(player);
     rightButton.removeEventListener("click", moveRight7);
     leftButton.removeEventListener("click", moveLeft7);
     rightButton.addEventListener("click", moveRight8);
@@ -332,8 +398,8 @@ const moveRight7 = () => {
 };
 
 const moveRight6 = () => {
-  if (right6.value === true) {
-    document.querySelectorAll(".glass")[15].appendChild(player);
+  if (rightArray[5].value === true) {
+    rightArray[5].appendChild(player);
     rightButton.removeEventListener("click", moveRight6);
     leftButton.removeEventListener("click", moveLeft6);
     rightButton.addEventListener("click", moveRight7);
@@ -350,8 +416,8 @@ const moveRight6 = () => {
 };
 
 const moveRight5 = () => {
-  if (right5.value === true) {
-    document.querySelectorAll(".glass")[14].appendChild(player);
+  if (rightArray[4].value === true) {
+    rightArray[4].appendChild(player);
     rightButton.removeEventListener("click", moveRight5);
     leftButton.removeEventListener("click", moveLeft5);
     rightButton.addEventListener("click", moveRight6);
@@ -368,8 +434,8 @@ const moveRight5 = () => {
 };
 
 const moveRight4 = () => {
-  if (right4.value === true) {
-    document.querySelectorAll(".glass")[13].appendChild(player);
+  if (rightArray[3].value === true) {
+    rightArray[3].appendChild(player);
     rightButton.removeEventListener("click", moveRight4);
     leftButton.removeEventListener("click", moveLeft4);
     rightButton.addEventListener("click", moveRight5);
@@ -386,8 +452,8 @@ const moveRight4 = () => {
 };
 
 const moveRight3 = () => {
-  if (right3.value === true) {
-    document.querySelectorAll(".glass")[12].appendChild(player);
+  if (rightArray[2].value === true) {
+    rightArray[2].appendChild(player);
     rightButton.removeEventListener("click", moveRight3);
     leftButton.removeEventListener("click", moveLeft3);
     rightButton.addEventListener("click", moveRight4);
@@ -404,8 +470,8 @@ const moveRight3 = () => {
 };
 
 const moveRight2 = () => {
-  if (right2.value === true) {
-    document.querySelectorAll(".glass")[11].appendChild(player);
+  if (rightArray[1].value === true) {
+    rightArray[1].appendChild(player);
     rightButton.removeEventListener("click", moveRight2);
     leftButton.removeEventListener("click", moveLeft2);
     rightButton.addEventListener("click", moveRight3);
@@ -422,9 +488,8 @@ const moveRight2 = () => {
 };
 
 const moveRight = () => {
-  const player = document.querySelector("#player");
-  if (right1.value === true) {
-    document.querySelectorAll(".glass")[10].appendChild(player);
+  if (rightArray[0].value === true) {
+    rightArray[0].appendChild(player);
     rightButton.removeEventListener("click", moveRight);
     leftButton.removeEventListener("click", moveLeft);
     rightButton.addEventListener("click", moveRight2);
