@@ -37,6 +37,16 @@ randomValueForGlassBridge();
 
 const player = document.querySelector("#player");
 
+const losingMove = () => {
+  document.querySelector(".life").remove();
+  if (document.querySelectorAll(".life").length > 0) {
+    alert("You lose a life!");
+  } else if (document.querySelectorAll(".life").length === 0) {
+    location.reload();
+    return alert("You lose!");
+  }
+};
+
 const moveLeft13 = () => {
   if (leftArray[12].value === true) {
     leftArray[12].appendChild(player);
@@ -45,13 +55,7 @@ const moveLeft13 = () => {
     };
     setTimeout(alertVictory, 500);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 const moveLeft12 = () => {
@@ -62,13 +66,7 @@ const moveLeft12 = () => {
     rightButton.addEventListener("click", moveRight13);
     leftButton.addEventListener("click", moveLeft13);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -80,13 +78,7 @@ const moveLeft11 = () => {
     rightButton.addEventListener("click", moveRight12);
     leftButton.addEventListener("click", moveLeft12);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 const moveLeft10 = () => {
@@ -97,13 +89,7 @@ const moveLeft10 = () => {
     rightButton.addEventListener("click", moveRight11);
     leftButton.addEventListener("click", moveLeft11);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -115,13 +101,7 @@ const moveLeft9 = () => {
     rightButton.addEventListener("click", moveRight10);
     leftButton.addEventListener("click", moveLeft10);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -133,13 +113,7 @@ const moveLeft8 = () => {
     rightButton.addEventListener("click", moveRight9);
     leftButton.addEventListener("click", moveLeft9);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -151,13 +125,7 @@ const moveLeft7 = () => {
     rightButton.addEventListener("click", moveRight8);
     leftButton.addEventListener("click", moveLeft8);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -169,13 +137,7 @@ const moveLeft6 = () => {
     rightButton.addEventListener("click", moveRight7);
     leftButton.addEventListener("click", moveLeft7);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -187,13 +149,7 @@ const moveLeft5 = () => {
     rightButton.addEventListener("click", moveRight6);
     leftButton.addEventListener("click", moveLeft6);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -205,13 +161,7 @@ const moveLeft4 = () => {
     rightButton.addEventListener("click", moveRight5);
     leftButton.addEventListener("click", moveLeft5);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -223,13 +173,7 @@ const moveLeft3 = () => {
     rightButton.addEventListener("click", moveRight4);
     leftButton.addEventListener("click", moveLeft4);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -241,13 +185,7 @@ const moveLeft2 = () => {
     rightButton.addEventListener("click", moveRight3);
     leftButton.addEventListener("click", moveLeft3);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -259,13 +197,7 @@ const moveLeft = () => {
     rightButton.addEventListener("click", moveRight2);
     leftButton.addEventListener("click", moveLeft2);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -280,13 +212,7 @@ const moveRight13 = () => {
     };
     setTimeout(alertVictory, 500);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 const moveRight12 = () => {
@@ -297,13 +223,7 @@ const moveRight12 = () => {
     rightButton.addEventListener("click", moveRight13);
     leftButton.addEventListener("click", moveLeft13);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -315,13 +235,7 @@ const moveRight11 = () => {
     rightButton.addEventListener("click", moveRight12);
     leftButton.addEventListener("click", moveLeft12);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -333,13 +247,7 @@ const moveRight10 = () => {
     rightButton.addEventListener("click", moveRight11);
     leftButton.addEventListener("click", moveLeft11);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -351,13 +259,7 @@ const moveRight9 = () => {
     rightButton.addEventListener("click", moveRight10);
     leftButton.addEventListener("click", moveLeft10);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -369,13 +271,7 @@ const moveRight8 = () => {
     rightButton.addEventListener("click", moveRight9);
     leftButton.addEventListener("click", moveLeft9);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -387,13 +283,7 @@ const moveRight7 = () => {
     rightButton.addEventListener("click", moveRight8);
     leftButton.addEventListener("click", moveLeft8);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -405,13 +295,7 @@ const moveRight6 = () => {
     rightButton.addEventListener("click", moveRight7);
     leftButton.addEventListener("click", moveLeft7);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -423,13 +307,7 @@ const moveRight5 = () => {
     rightButton.addEventListener("click", moveRight6);
     leftButton.addEventListener("click", moveLeft6);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -441,13 +319,7 @@ const moveRight4 = () => {
     rightButton.addEventListener("click", moveRight5);
     leftButton.addEventListener("click", moveLeft5);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -459,13 +331,7 @@ const moveRight3 = () => {
     rightButton.addEventListener("click", moveRight4);
     leftButton.addEventListener("click", moveLeft4);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -477,13 +343,7 @@ const moveRight2 = () => {
     rightButton.addEventListener("click", moveRight3);
     leftButton.addEventListener("click", moveLeft3);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
@@ -495,13 +355,7 @@ const moveRight = () => {
     rightButton.addEventListener("click", moveRight2);
     leftButton.addEventListener("click", moveLeft2);
   } else {
-    document.querySelector(".life").remove();
-    if (document.querySelectorAll(".life").length > 0) {
-      alert("You lose a life!");
-    } else if (document.querySelectorAll(".life").length === 0) {
-      location.reload();
-      return alert("You lose!");
-    }
+    losingMove();
   }
 };
 
