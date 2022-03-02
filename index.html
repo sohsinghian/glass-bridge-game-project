@@ -5,32 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Squid Game - Glass Bridge</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Squid Game - Glass Bridge</h1>
-    <div id="btns">
-      <button id="left-btn">LEFT</button>
-      <br />
-      <button id="right-btn">RIGHT</button>
+    <h2>Press 'A' to move left, 'D' to move right, and 'H' for hint.</h2>
+    <h2>Hint can only be used once.</h2>
+    <div id="menu-bar">
+      <button id="change-character-btn">Change Character</button>
+      <h4>No. of Lives:</h4>
+      <button id="life3-btn">3</button>
+      <button id="life4-btn">4</button>
+      <button id="life5-btn">5</button>
+      <h4>Background Music:</h4>
+      <button id="sound-on-btn">On</button>
+      <button id="sound-off-btn">Off</button>
+      <button id="restart-btn">Restart</button>
     </div>
     <div id="soldiers">
-      <img class="soldier" src="images/circle.jpeg" alt="circle" />
+      <img class="soldier" src="images/circle.png" alt="circle" />
       <img class="soldier" src="images/square.png" alt="square" />
       <img class="soldier" src="images/triangle.png" alt="triangle" />
     </div>
     <div id="container">
-      <img id="player" src="images/player1.jpeg" alt="player1" />
-
+      <div id="player-container">
+        <!-- <img id="player" src="images/player1.png" alt="player1" /> -->
+      </div>
       <div id="glass-bridge" class="glass-container"></div>
     </div>
-    <h3>Lives</h3>
+    <h3>LIVES LEFT</h3>
     <div id="lives">
-      <img class="life" src="images/player1.jpeg" alt="player1" />
-      <img class="life" src="images/player2.jpg" alt="player2" />
-      <img class="life" src="images/player3.jpg" alt="player3" />
-      <img class="life" src="images/player4.jpg" alt="player4" />
-      <img class="life" src="images/player5.jpg" alt="player5" />
+      <!-- <img class="life" src="images/player2.png" alt="player1" />
+      <img class="life" src="images/player3.png" alt="player1" />
+      <img class="life" src="images/player4.png" alt="player1" /> -->
     </div>
     <script src="script.js" charset="utf-8"></script>
   </body>

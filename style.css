@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
 html {
   width: auto;
   width: 100%;
@@ -6,37 +8,52 @@ html {
 
 body {
   text-align: center;
+  font-family: "Poiret One";
 }
 
-#left-btn {
-  font-size: 20px;
-  background-color: red;
-  color: white;
-  padding: 10px 20px 10px 20px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: 5px;
-}
-
-#right-btn {
-  font-size: 20px;
-  background-color: green;
-  color: white;
-  padding: 10px 20px 10px 20px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: auto;
-}
-
-#btns {
+#menu-bar {
   display: flex;
+  width: auto;
+  align-items: center;
+  background-color: rgb(255, 191, 191);
+}
+
+#restart-btn,
+#sound-on-btn,
+#sound-off-btn,
+#change-character-btn,
+#life3-btn,
+#life4-btn,
+#life5-btn {
+  font-size: 15px;
+  /* margin: auto; */
+  background-color: rgba(143, 143, 143, 0.1);
+  color: black;
+  padding: 4px 8px 4px 8px;
+}
+
+#change-character-btn {
+  margin-right: 50px;
+  margin-left: 160px;
+}
+
+#life5-btn {
+  margin-right: 360px;
+}
+
+#restart-btn {
+  margin-left: 50px;
 }
 
 #container {
-  margin: 20px 50px 0px 50px;
+  margin: 20px 50px 0px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+#player-container {
+  width: 100px;
 }
 
 .glass-container {
@@ -61,11 +78,14 @@ body {
   margin: auto;
 }
 
+.player {
+  width: 50px;
+  margin: auto;
+}
+
 #lives {
-  margin-left: 600px;
-  margin-right: 600px;
   margin-bottom: 100px;
-  display: flex;
+  display: inline;
 }
 
 .life {
@@ -79,6 +99,15 @@ body {
 }
 
 #soldiers {
-  margin: 30px 620px 0px 620px;
+  margin: 5px 620px 0px 620px;
   display: flex;
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  margin: 0px;
+}
+.bold {
+  font-weight: bold;
 }
