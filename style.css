@@ -2,34 +2,49 @@
 
 html {
   width: auto;
-  width: 100%;
   display: flex;
 }
 
 body {
+  background-image: url(images/background-image-2.jpeg);
+  background-size: 2650px;
+  /* background-repeat: repeat-x; */
   text-align: center;
   font-family: "Poiret One";
+  width: 100%;
 }
 
 #menu-bar {
   display: flex;
-  width: auto;
+  width: 100%;
   align-items: center;
   background-color: rgb(255, 191, 191);
+  margin-top: 10px;
 }
 
-#restart-btn,
 #sound-on-btn,
 #sound-off-btn,
 #change-character-btn,
 #life3-btn,
 #life4-btn,
-#life5-btn {
+#life5-btn,
+#start-btn {
   font-size: 15px;
   /* margin: auto; */
   background-color: rgba(143, 143, 143, 0.1);
   color: black;
   padding: 4px 8px 4px 8px;
+}
+
+#sound-on-btn:hover,
+#sound-off-btn:hover,
+#change-character-btn:hover,
+#life3-btn:hover,
+#life4-btn:hover,
+#life5-btn:hover,
+#start-btn:hover {
+  background-color: rgb(170, 1, 20);
+  color: white;
 }
 
 #change-character-btn {
@@ -38,13 +53,17 @@ body {
 }
 
 #life5-btn {
-  margin-right: 360px;
+  margin-right: 170px;
 }
 
-#restart-btn {
-  margin-left: 50px;
+#background-music-text {
+  margin-left: 240px;
 }
 
+#timer {
+  font-size: 25px;
+  height: 28px;
+}
 #container {
   margin: 20px 50px 0px 10px;
   display: flex;
@@ -106,8 +125,14 @@ body {
 h2 {
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
-  margin: 0px;
+  margin: 8px;
+  color: white;
 }
-.bold {
-  font-weight: bold;
+
+h1 {
+  color: white;
+}
+
+#lives-left-text {
+  color: white;
 }
