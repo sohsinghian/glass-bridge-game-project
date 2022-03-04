@@ -18,6 +18,7 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
   background-color: rgb(255, 191, 191);
   margin-top: 10px;
 }

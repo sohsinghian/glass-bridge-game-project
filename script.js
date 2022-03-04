@@ -379,5 +379,3 @@ const startGame = () => {
 
 const startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
-
-// One question, how to remove event listener for anonymous function?
