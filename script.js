@@ -226,7 +226,7 @@ const changeCharacter = () => {
 const changeCharacterButton = document.querySelector("#change-character-btn");
 changeCharacterButton.addEventListener("click", changeCharacter);
 
-let timeLeft = 60;
+let timeLeft = 20;
 const t = document.querySelector("#timer");
 
 // create function to update timer to countdown by seconds.
